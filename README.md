@@ -1,4 +1,4 @@
-# Sonar Scanner Drone Plugin
+# Sonar Scanner Drone Plugin by Walmart
 
 ### Requirements:
   * sonar-scanner.properties. This file have to be on your project root directory, use this file to add specific (coverage path, files) information for your project. Ex: 
@@ -18,6 +18,16 @@ $ docker run -it -rm -e SONAR_HOST=<sonar-url> \
 -e DRONE_BUILD_NUMBER=<any-number> \
 -v $(pwd):/home \
  <container-name>
+```
+
+### Drone Usage:
+Copy this code block to drone and replace on `<>`
+```yaml
+code_analysis:
+  image: walmartdigital.azurecr.io/sonar-scanner-drone-plugin:latest
+  project_key: <product-name>
+  sources_directory: <sources-path>
+  secrets: [ sonar_host, sonar_token ]
 ```
 
 ### Maintainer
