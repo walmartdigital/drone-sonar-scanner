@@ -10,11 +10,11 @@
 ### Docker Usage:
 In the root project run the follow command
 ```bash
-$ docker run -it -rm -e SONAR_HOST=<sonar-url> \ 
--e SONAR_HOST=<> \ 
--e SONAR_TOKEN=<sonar-token> \ 
--e PLUGIN_PROJECT_KEY=<project-key> \ 
--e PLUGIN_SOURCES_DIR=<src-path> \ 
+$ docker run -it -rm -e SONAR_HOST=<sonar-url> \
+-e SONAR_HOST=<> \
+-e SONAR_TOKEN=<sonar-token> \
+-e PLUGIN_PROJECT_KEY=<project-key> \
+-e PLUGIN_SOURCES_DIRECTORY=<src-path> \
 -e DRONE_BUILD_NUMBER=<any-number> \
 -v $(pwd):/home \
  <container-name>

@@ -56,7 +56,7 @@ else
   printf " Sonar Project Key \n";
 fi
 
-if [ -z $PLUGIN_SOURCES_DIR ]; then 
+if [ -z $PLUGIN_SOURCES_DIRECTORY ]; then
   printf $RED_X;
   printf " Sources Directory is required.. \n";
   exit 1;
@@ -77,7 +77,7 @@ fi
 echo -e "========================================"
 echo -e "          Executing scanner             "
 echo -e "========================================"
-../sonarqube/bin/sonar-scanner -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$PLUGIN_PROJECT_KEY -Dsonar.sources=$PLUGIN_SOURCES_DIR -Dsonar.projectVersion=$DRONE_BUILD_NUMBER -Dsonar.log.level=DEBUG -Dsonar.showProfiling=true -Dsonar.scm.provider=git -Dproject.settings=sonar-scanner.properties
+../sonarqube/bin/sonar-scanner -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$PLUGIN_PROJECT_KEY -Dsonar.sources=$PLUGIN_SOURCES_DIRECTORY -Dsonar.projectVersion=$DRONE_BUILD_NUMBER -Dsonar.log.level=DEBUG -Dsonar.showProfiling=true -Dsonar.scm.provider=git -Dproject.settings=sonar-scanner.properties
 echo -e "========================================"
 echo -e "Maintainer: miguel.herrera0@walmart.com "
 echo -e "========================================"
