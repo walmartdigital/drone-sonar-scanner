@@ -25,7 +25,7 @@ Copy this code block to drone and replace on `<>`
 ```yaml
 code_analysis:
   image: walmartdigital.azurecr.io/sonar-scanner-drone-plugin:latest
-  project_key: <product-name>
+  project_key: walmart/<product-name>
   sources_directory: <sources-path>
   secrets: [ sonar_host, sonar_token ]
 ```
