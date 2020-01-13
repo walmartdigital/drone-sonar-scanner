@@ -11,4 +11,4 @@ RUN rm sonar-scanner-cli-4.2.0.1873-linux.zip
 
 ADD entrypoint.sh .
 
-ENTRYPOINT [ "./entrypoint.sh" ]
+ENTRYPOINT [ "./home/entrypoint.sh" ]
