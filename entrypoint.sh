@@ -27,7 +27,7 @@ echo -e "========================================"
 
 CHECK="\u2714";
 RED_X="\u274c";
-FILE=sonar-scanner.properties
+FILE=sonar-project.properties
 
 if [ -z $SONAR_HOST ]; then 
   printf $RED_X;
@@ -67,17 +67,17 @@ fi
 
 if [ -f "$FILE" ]; then
     printf $CHECK;
-    printf " sonar-scanner.properties file on project \n";
+    printf " sonar-project.properties file on project \n";
   else
   printf $RED_X;
-  printf " sonar-scanner.properties is required.. \n";
+  printf " sonar-project.properties is required.. \n";
   exit 1;
 fi
 
 echo -e "========================================"
 echo -e "          Executing scanner             "
 echo -e "========================================"
-../sonarqube/bin/sonar-scanner -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$PLUGIN_PROJECT_KEY -Dsonar.sources=$PLUGIN_SOURCES_DIRECTORY -Dsonar.projectVersion=$DRONE_BUILD_NUMBER -Dsonar.log.level=DEBUG -Dsonar.showProfiling=true -Dsonar.scm.provider=git -Dproject.settings=sonar-scanner.properties
+../sonarqube/bin/sonar-scanner -Dsonar.host.url=$SONAR_HOST -Dsonar.login=$SONAR_TOKEN -Dsonar.projectKey=$PLUGIN_PROJECT_KEY -Dsonar.sources=$PLUGIN_SOURCES_DIRECTORY -Dsonar.projectVersion=$DRONE_BUILD_NUMBER -Dsonar.log.level=DEBUG -Dsonar.showProfiling=true -Dsonar.scm.provider=git -Dproject.settings=sonar-project.properties
 echo -e "========================================"
 echo -e "Maintainer: miguel.herrera0@walmart.com "
 echo -e "========================================"

@@ -1,7 +1,7 @@
 # Sonar Scanner Drone Plugin by Walmart
 
 ### Requirements:
-  * sonar-scanner.properties. This file have to be on your project root directory, use this file to add specific (coverage path, files) information for your project. Ex: 
+  * sonar-project.properties. This file have to be on your project root directory, use this file to add specific (coverage path, files) information for your project. Ex:
   ```
   sonar.javascript.lcov.reportPaths=coverage/lcov.info
   sonar.coverage.exclusions=test/**/*.test.js,src/api.js,src/index.js
