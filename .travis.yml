@@ -1,0 +1,10 @@
+services:
+  - docker
+
+notifications:
+  email: false
+
+script:
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker build -t walmartdigitalcr/drone-sonar-scanner:b-${TRAVIS_BUILD_NUMBER} .
+  - docker push walmartdigitalcr/drone-sonar-scanner:b-${TRAVIS_BUILD_NUMBER}
