@@ -1,4 +1,5 @@
 FROM openjdk:latest
+MAINTAINER miguel.herrera0@walmart.com
 
 WORKDIR /
 
